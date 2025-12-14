@@ -1,0 +1,239 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #0d0d0d;
+	font-family: monospace;
+	line-height: 1.6;
+	color: #c9d1d9;
+}
+
+.topo{
+	padding: 3rem 1rem;
+	text-align: center;
+	color:#51c462;
+	border-bottom: 2px solid #148224;
+}
+
+.topo h1{
+	font-size: 2.5rem;
+}
+
+.meta {
+	font-size: 0.8rem;
+	color: #8b949e;
+}
+
+.container{
+	max-width: 800px;
+	margin: auto;
+	padding: 2rem 2rem 3em;
+}
+
+.posts h2 {
+	margin-bottom: 1rem;
+	color: #58a6ff;
+}
+
+.card_post {
+	display: flex;
+	gap: 1rem;
+	border: 1px solid #148224;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 6px;
+	background: #0d1117;
+	transition: background 0.2s, border 0.2s;
+}
+
+.card_post:hover {
+	background: #161b22;
+	border-color: #2ea043;
+}
+
+.post_icon img {
+	width: 48px;
+	height: 48px;
+	filter: invert(63%) sepia(48%) saturate(500%) hue-rotate(80deg);
+}
+
+.post_content h3 {
+	margin-bottom: 0.3rem;
+	color: #c9d1d9;
+}
+
+.subtitle {
+	font-size: 0.9rem;
+	color: #8b949e;
+	margin-bottom: 0.5rem;
+}
+
+.tags span {
+	font-size: 0.75rem;
+	color: #58a6ff;
+	margin-right: 0.5rem;
+}
+
+.glitch {
+	cursor: pointer;
+	position: relative;
+}
+.glitch:hover {
+	color: #58a6ff;
+}
+
+.post h2{
+	color:#51c462;
+}
+
+.post .subtitle{
+	color:#bfbfbf;
+}
+.post pre{
+	color:#dcf54e;
+	background-color:#303030;
+	border: 1px solid #dcf54e;
+	padding: 1.2rem 1.4rem;
+	margin:15px;
+	overflow-x: auto;
+}
+
+.post img{
+	max-width: 100%;
+	display: block;
+	margin: 2rem auto;
+	border-radius: 10px;
+	border: 1px solid #30363d;
+	background: #0d1117;
+	max-width: 250px;
+	height: auto;
+	display: block; 
+}
+
+.post .alerta{
+	color:black;
+	background-color:#d4a10b;
+	border: 1px solid #dcf54e;
+	padding: 0.2rem 0.5rem;
+	margin:15px;
+	overflow-x: auto;
+}
+.copy_btn {
+	background: transparent;
+	border: 1px solid #30363d;
+	color: #8b949e;
+	font-size: 0.7rem;
+	padding: 0.2rem 0.5rem;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.2s;
+	display: block;
+}
+
+.copy_btn:hover {
+	color: #58a6ff;
+	border-color: #58a6ff;
+}
+
+.copy_btn.copied {
+	color: #51c462;
+	border-color: #51c462;
+}
+
+.categoria, .meta span {
+	color: #58a6ff;
+	font-size: 0.75rem;
+	margin-right: 0.4rem;
+}
+
+.categories {
+	display: flex;
+	gap: 0.8rem;
+	flex-wrap: wrap;
+	margin: 2rem 0;
+}
+
+.cat_card {
+	border: 1px solid #148224;
+	padding: 0.6rem 1.2rem;
+	border-radius: 6px;
+	background: #0d1117;
+	color: #c9d1d9;
+	font-size: 0.8rem;
+	cursor: pointer;
+	transition: background 0.2s, border 0.2s;
+	text-transform: lowercase;
+}
+
+.cat_card:hover {
+	background: #161b22;
+	border-color: #2ea043;
+	color: #58a6ff;
+}
+
+.cat_card.active {
+	border-color: #58a6ff;
+	color: #58a6ff;
+}
+
+.autor {
+	margin-top: 0.6rem;
+	font-size: 0.75rem;
+	color: #51c462;
+	font-family: monospace;
+	opacity: 0.85;
+}
+
+.meta.social {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.meta.social,
+.meta.social span {
+	color: #51c462;
+}
+
+.meta.social svg {
+	width: 16px;
+	height: 16px;
+	fill: currentColor;
+	opacity: 0.9;
+}
+
+.meta.social a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: #51c462;
+	text-decoration: none;
+}
+
+.meta.social a:hover {
+	text-decoration: underline;
+	opacity: 0.9;
+}
+
+.final{
+	color:#2aa35f;
+	padding: 3rem 1rem;
+	text-align: center;
+}
+
+.btn-voltar {
+	color: #51c462;
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.btn-voltar:hover {
+	opacity: 1;
+	text-decoration: underline;
+}
+
