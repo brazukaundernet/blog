@@ -54,3 +54,16 @@ document.querySelectorAll(".glitch").forEach(el => {
   });
 });
 
+const authorBox = document.querySelector('.author-box');
+
+window.addEventListener('scroll', () => {
+	const scrollBottom =
+		window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+
+	if (scrollBottom) {
+		authorBox.classList.add('show');
+	} else {
+		authorBox.classList.remove('show');
+	}
+});
+
