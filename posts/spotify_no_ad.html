@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="https://brazukaundernet.github.io/blog/favicon.png">
+	<title>Brazuna Undernet | Spotify Sem ANÚNCIOS (Gratuitamente) </title>
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="BRAZUKA UNDERNET | Spotify Sem ANÚNCIOS (Gratuitamente)">
+	<meta property="og:description" content="Descubra como usar o Spotify sem ADs de forma gratuita">
+	<meta property="og:url" content="https://brazukaundernet.github.io/">
+	<meta property="og:image" content="https://brazukaundernet.github.io/blog/imagens/spotify1.png">
+	<meta name="twitter:title" content="BRAZUKA UNDERNET | Spotify Sem ANÚNCIOS (Gratuitamente)">
+	<meta name="twitter:description" content="Descubra como usar o Spotify sem ADs de forma gratuita">
+	<meta name="twitter:image" content="https://brazukaundernet.github.io/blog/imagens/spoty_no_ad_capa.png">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+<div class="topo">
+	<h1>BRAZUKA UNDERNET</h1>
+	<p class="meta">segurança ofensiva · independência digital</p>
+</div>
+
+<section class="posts">
+<div class="container post">
+	<h2>Usando o Spotify "Premium" de graça no seu Linux com spicetify</h2>
+	<p class="subtitle">Tem como? tem sim! nada é impossível para a comunidade. Use o <strong>spicetify</strong> agora! E te explico como, veja abaixo o passo a passo!</p><br>
+	<p class="subtitle">Achei que fosse só comigo <span class="sistema">(uso o Debian 12 Bookworm)</span>, mas percebi que o <a href="https://www.reddit.com/r/debian/comments/12h52yu/spotify_issue_in_debain_12/" target="_blank">Spotify já estava fora do ar há algum tempo.</a> Só notei de verdade depois que instalei meu sistema em um SSD e, claro, não ia deixar de dar um jeito de ter o Spotify de volta.<br>Depois de algumas pesquisas, encontrei uma solução para trazer o <strong>spotify-client</strong> novamente, e o melhor: <strong>totalmente livre de anúncios</strong>!</p><br>
+	
+	<h2>Instalando flatpak</h2>
+	<p class="subtitle">Este tutorial foi feito <strong>exclusivamente para usuários de PC que utilizam o Spotify instalado via Flatpak no Linux.</strong> Embora o método possa funcionar também em outras plataformas (como Snap ou Windows), aqui vou <strong>ENSINAR</strong> apenas o processo no Flatpak, passo a passo, para garantir que tudo funcione corretamente.</p>
+	<br>
+	<p class="subtitle">Antes de começarmos, é importante garantir que você tenha o Flatpak instalado no seu sistema. Se ainda não tem, confira a documentação oficial</p>
+	
+	<div onclick="window.open('https://flatpak.org/setup/', '_blank');" class="buttonpost">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Flatpak SVG Icon</title><path fill="currentColor" d="M12 0c-.556 0-1.111.144-1.61.432l-7.603 4.39a3.22 3.22 0 0 0-1.61 2.788v8.78c0 1.151.612 2.212 1.61 2.788l7.603 4.39a3.22 3.22 0 0 0 3.22 0l7.603-4.39a3.22 3.22 0 0 0 1.61-2.788V7.61a3.22 3.22 0 0 0-1.61-2.788L13.61.432A3.2 3.2 0 0 0 12 0m0 2.358c.15 0 .299.039.431.115l7.604 4.39c.132.077.24.187.315.316L12 12v9.642a.86.86 0 0 1-.431-.116l-7.604-4.39a.87.87 0 0 1-.431-.746V7.61c0-.153.041-.302.116-.43L12 12Z"/></svg>
+		<span>Flatpak – Guia de Instalação.</span>
+	</div>
+	
+	<p class="subtitle">No Debian 12 (Bookworm), por exemplo, você pode instalar com:</p>
+	<pre>sudo apt install flatpak</pre>
+	<button class="copy_btn">copiar</button>
+	
+	<p class="subtitle">Depois, adicione o repositório Flathub (caso ainda não esteja configurado):</p>
+	<pre>sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</pre>
+	<button class="copy_btn">copiar</button>
+	
+	<br><p class="subtitle">Com isso pronto, seguimos para instalar o Spotify via Flatpak</p>
+
+	<h2>Instalando o Spotify</h2>
+	
+	<img src="../imagens/spotify2.png">
+	
+	<p class="subtitle">Com esse simples comando podemos instalar (Lembre-se de usar o parâmetro <span class="sistema">--user</span>, facilita o spicetify)</p>
+	<pre>flatpak install --user flathub com.spotify.Client</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<img src="../imagens/spotify3.png">
+	<p class="subtitle">E agora é necessário abrir pelo menos o Spotify uma vez para criar os arquvios necessários <strong>[Prefs, Plugins, CSS, assets e etc.]</strong></p>
+	<pre>flatpak run com.spotify.Client</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<p class="subtitle">Verifique se o caminho do Spotify foi criado corretamente:</p>
+	<pre>ls ~/.local/share/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify</pre>
+	<button class="copy_btn">copiar</button><br>	
+	<p class="subtitle">Se esse diretório existir, significa que a instalação está pronta para receber o <strong>Spicetify</strong>.</p>
+	
+	<h2>Instalando o Spicetify</h2>
+	<div onclick="window.open('https://spicetify.app', '_blank');"  class="buttonpost"><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><title>Doc-circle-fill SVG Icon</title><path fill="currentColor" d="M28 51.906c13.055 0 23.906-10.828 23.906-23.906c0-13.055-10.875-23.906-23.93-23.906C14.899 4.094 4.095 14.945 4.095 28c0 13.078 10.828 23.906 23.906 23.906m-6.75-10.828c-2.578 0-3.89-1.312-3.89-3.96V17.991c0-2.625 1.312-3.96 3.89-3.96h5.648v9.445c0 1.617.774 2.367 2.391 2.367h9.281v11.273c0 2.625-1.289 3.961-3.89 3.961Zm8.227-17.133c-.446 0-.68-.234-.68-.68v-9.093c.515.07 1.054.445 1.64 1.055l6.938 7.078c.61.61.984 1.125 1.055 1.64Z"/></svg><span>Documentação Spicetify</span></div><br>
+	<p class="subtitle">Agora que o Spotify via Flatpak já está instalado e funcionando, vamos instalar o Spicetify, a ferramenta que permite personalizar e aplicar extensões ao Spotify.</p>
+	
+	
+	<img src="../imagens/spotify4.png">
+	<p class="subtitle">No terminal, execute:</p>
+	<pre>curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<img src="../imagens/spotify5.png">
+	<p class="alerta">ATENÇÃO, NÃO INSTALE O MARKETPLACE, isso será futuramente configurado e instalado, caso seja solicitado pressione [N]</p>
+	<p class="subtitle">Feche e abra o terminal novamente para garantir que o comando <span class="sistema">spicetify</span> seja reconhecido.</p>
+	
+	<p class="subtitle">Defina os diretórios corretos para o Spotify e suas preferências:</p>
+	<pre>spicetify config spotify_path ~/.local/share/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify<br>spicetify config prefs_path ~/.var/app/com.spotify.Client/config/spotify/prefs</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<p class="subtitle">Ative algumas opções úteis:</p>
+	<pre>spicetify config use_xpui_extensions 1<br>spicetify config inject_css 1<br>spicetify config replace_colors 1</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<p class="subtitle">Confirma se está tudo OK:</p>
+	<pre>spicetify config</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<h2>Configurando o Spicetify</h2>
+	<p class="subtitle"><strong>Se você use Flatpak</strong> precisamos liberar algumas permissões para que o Spicetify consiga aplicar as modificações corretamente. Execute o comando abaixo:</p>
+	<pre>flatpak override --user \<br>--filesystem=home \<br>--filesystem=~/.local/share/flatpak/app/com.spotify.Client \<br>--filesystem=~/.var/app/com.spotify.Client \<br>com.spotify.Client</pre>
+	<button class="copy_btn">copiar</button><br>
+	<p class="subtitle">Isso garante que o Spicetify tenha acesso aos diretórios necessários.</p>
+	
+	<img src="../imagens/spotify6.png">
+	<img src="../imagens/spotify7.png">
+	<p class="subtitle">Criar backup e aplicar:</p>
+	<pre>spicetify backup<br>spicetify apply</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<p class="subtitle"><strong>Agora sim vamos estar finalmente entrando na parte interessante, vamos instalar o Marketplace</strong><br>O Marketplace é onde você encontra extensões e temas criados pela comunidade. Para instalar:</p>	
+	<pre>curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<img src="../imagens/spotify8.png">
+	<p class="subtitle">Confira se o diretório foi criado:</p>
+	<pre>ls ~/.config/spicetify/CustomApps</pre>
+	<button class="copy_btn">copiar</button><br>
+	<p class="alerta"><strong>É PRECISO APARECER A PASTA MARKETPLACE</strong></p>
+	
+	<p class="subtitle">Finalize aplicando as alterações:</p>
+	<pre>spicetify apply</pre>
+	<button class="copy_btn">copiar</button><br>
+	
+	<img src="../imagens/spotify9.png">
+	<p class="subtitle">Se aparecer esse ícone, o Spicetify foi instalado com sucesso!</p>
+	<p class="comentario">"E dai já não tenho nenhum AD no meu Spotify?"</p>
+	<img src="../imagens/spotify10.png">
+	<p class="subtitle"><strong>AINDA TEM AD</strong> e para remover eles você pode estar indo baixar uma extensão que bloqueia todos anúncios, aproveita para instalar um teminha legal!</p>
+	<div class="final">
+		<p><strong>Conclusão</strong><br>
+Pronto! Agora você tem o Spotify via Flatpak rodando com o Spicetify configurado e o Marketplace instalado. A partir daqui, você pode explorar temas, extensões e personalizações para deixar seu Spotify do jeito que quiser e procurando do jeito certo sem AD.</p>
+	</div>
+
+<br><a href="../index.html" class="btn-voltar">← voltar</a>
+</div>
+</section>
+<script src="../js/texto.js"></script>
+<script src="../js/filtro.js"></script>
+</body>
+</html>
+

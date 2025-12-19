@@ -42,40 +42,49 @@ console.log('eae');
 	<section class="intro">
 		<p>Blog pessoal de código, exploração e segurança ofensiva.</p>
 	</section>
-	
+
 <section class="posts">
 	<h2>Últimos posts</h2>	
-	<article class="card_post" data-category="android privacidade" onclick='window.location.href="posts/bloqueador_anuncios.html";'>
+	<article class="card_postagem" data-category="android privacidade" id='ultimopost'>
 	<div class="post_icon">
-		<img src="imagens/adguard_capa.png">
+		<img src="imagens/spotify1.png">
 	</div>	
 	<div class="post_content">
-		<h3 class="glitch" data-text="Bloquear anúncios de forma totalmente gratuita">Bloquear anúncios de forma totalmente gratuita</h3>
-		 
-		 <p class="subtitle">
-		 	Navegue mais rápido e sem distrações configurando o AdGuard DNS no seu dispositivo: Android/Linux/Windows/Mac/IOs
-		 </p>
-		 <p class="autor">@Fatalsec</p>				 
-		
-		<div class="tags"><span>#android #privacidade</span>
+		<h3 class="glitch" data-text="Usando Spotify SEM ANÚNCIOS no seu Linux (de graça)">Usando Spotify SEM ANÚNCIOS no seu Linux (de graça)</h3>
+		 <p class="subtitle">Você vai poder pular quantas músicas quiser sem ver nem a sombra de um AD!</p>
+		 <p class="autor">@Fatalsec</p>
+		<div class="tags"><span>#linux #dicas</span>
 		</div>
 		</div>	
-	</article>
+	</article>	
 </section>
 
 
-<section class="categories">
-	<div class="cat_card" data-filter="all">todos</div>
-	<div class="cat_card" data-filter="linux">linux</div>
-	<div class="cat_card" data-filter="hacking">hacking</div>
-	<div class="cat_card" data-filter="android">android</div>
-	<div class="cat_card" data-filter="privacidade">privacidade</div>
-</section>
-
-	
+<article class="card_post" data-category="linux dicas" id='blockad'>
+<div class="post_icon">
+		<img src="imagens/adguard_capa.png">
 </div>
+<div class="post_content">
+	<h3 class="glitch" data-text="Bloqueador de anúncios totalmente gratuito">Bloqueador de anúncios totalmente gratuito</h3>
+	<p class="subtitle">Navegue mais rápido e sem distrações configurando o AdGuard DNS no seu dispositivo: Android/Linux/Windows/Mac/IOs</p>
+	<p class="autor">@Fatalsec</p>				 
+	<div class="tags"><span>#android #dicas</span>	
+</div>
+</article>
+
+<div class="categorias">
+	<button id="ultima">última postagem</button>
+	<button data-filter="all">Tudo <span></span></button>
+	<button data-filter="hacking">Hacking <span></span></button>
+	<button data-filter="dicas">Dicas <span></span></button>
+	<button data-filter="linux">Linux <span></span></button>
+	<button data-filter="android">Android <span></span></button>
+</div>
+
+
 <script src="js/texto.js"></script>
 <script src="js/filtro.js"></script>
+<script src="js/links.js"></script>
 </body>
 </html>
 
