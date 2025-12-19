@@ -1,63 +1,49 @@
-document.querySelectorAll('.cat_card').forEach(cat => {
-	cat.addEventListener('click', () => {
-		const filter = cat.dataset.filter
+const catCards = document.querySelectorAll('.cat_card');
+const posts = document.querySelectorAll('.card_post');
+const buttons = document.querySelectorAll('.categorias button');
 
-		document.querySelectorAll('.cat_card').forEach(c => c.classList.remove('active'))
-		cat.classList.add('active')
+function aplicarFiltro(filtro) {
+  posts.forEach(post => {
+    const categorias = post.dataset.category || '';
+    post.style.display = (filtro === 'all' || categorias.includes(filtro)) ? 'flex' : 'none';
+  });
+}
 
-		document.querySelectorAll('.card_post').forEach(post => {
-			const cats = post.dataset.category || ''
+catCards.forEach(cat => {
+  cat.addEventListener('click', () => {
+    const filtro = cat.dataset.filter;
+    catCards.forEach(c => c.classList.remove('active'));
+    cat.classList.add('active');
 
-			if (filter === 'all' || cats.includes(filter)) {
-				post.style.display = 'flex'
-			} else {
-				post.style.display = 'none'
-			}
-		})
-	})
-})
-
-document.querySelectorAll('.categorias button').forEach(btn => {
-	btn.addEventListener('click', () => {
-		const filtro = btn.dataset.filter
-		const posts = document.querySelectorAll('.card_post')
-
-		posts.forEach(post => {
-			const categorias = post.dataset.category || ''
-
-			if (filtro === 'all' || categorias.includes(filtro)) {
-				post.style.display = 'flex'
-			} else {
-				post.style.display = 'none'
-			}
-		})
-	})
-})
-
+    aplicarFiltro(filtro);
+  });
+});
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filtro = btn.dataset.filter;
+    aplicarFiltro(filtro);
+  });
+});
 document.addEventListener("DOMContentLoaded", () => {
-	const posts = document.querySelectorAll(".card_post");
-	const buttons = document.querySelectorAll(".categorias button");
+  const counts = {};
 
-	const counts = {};
+  posts.forEach(post => {
+    const categories = (post.dataset.category || '').split(" ");
+    categories.forEach(cat => {
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+  });
 
-	posts.forEach(post => {
-		const categories = post.dataset.category.split(" ");
-		categories.forEach(cat => {
-			counts[cat] = (counts[cat] || 0) + 1;
-		});
-	});
+  buttons.forEach(btn => {
+    const filtro = btn.dataset.filter;
+    const span = btn.querySelector("span");
+    if (!span) return;
 
-	buttons.forEach(btn => {
-		const filter = btn.dataset.filter;
-		const span = btn.querySelector("span");
-
-		if (!span) return;
-
-		if (filter === "all") {
-			span.textContent = `(${posts.length})`;
-		} else {
-			span.textContent = `(${counts[filter] || 0})`;
-		}
-	});
+    if (filtro === "all") {
+      span.textContent = `(${posts.length})`;
+    } else {
+      span.textContent = `(${counts[filtro] || 0})`;
+    }
+  });
 });
 

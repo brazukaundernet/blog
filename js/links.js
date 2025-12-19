@@ -1,10 +1,13 @@
-const postagens = document.querySelectorAll('post_content');
+const postagens = document.querySelectorAll('.post_content');
+function abrirPost(id, url) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener("click", () => {
+    window.open(url, "_blank");
+  });
+}
 
-const atual = document.getElementById('ultimopost');
-atual.addEventListener("click", () =>{
-	window.open("posts/spotify_no_ad.html");
-});
+//Posts
+abrirPost("ultimopost", "posts/spotify_no_ad.html");
+abrirPost("blockad", "posts/bloqueador_anuncios.html");
 
-document.getElementById('blockad').addEventListener("click", () =>{
-	window.open("posts/bloqueador_anuncios.html");
-});
