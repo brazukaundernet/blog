@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+	background-color: #0a0a0a;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.logo-container {
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.logo-container img {
+	max-width: 350px;
+	width: 80%;
+	filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
+}
+
+.brand {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.brand h1 {
+	font-family: 'Michroma', sans-serif;
+	color: #ffffff;
+	font-size: clamp(2rem, 8vw, 4.5rem);
+	letter-spacing: 8px;
+	line-height: 1.1;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.brand p {
+	font-family: 'Michroma', sans-serif;
+	color: #ffffff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 1.1;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+
+.brand span {
+	font-family: 'Quantico', sans-serif;
+	color: #cc0000;
+	display: block;
+	font-size: clamp(1rem, 4vw, 2.2rem);
+	font-weight: 700;
+	letter-spacing: 12px;
+	margin-top: 5px;
+	text-shadow: 0 0 8px rgba(204, 0, 0, 0.4); 
+}
+
+.botao {
+	margin-top: 40px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	padding: 12px 30px;
+	cursor: pointer;
+	background: rgba(230, 0, 0, 0.05);
+	border: 1px solid #E60000;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+.botao p{
+	font-family: 'Quantico', sans-serif;
+	color: #FFFFFF;
+	font-size: 0.9rem;
+	font-weight: 700;
+	letter-spacing: 3px;
+	margin: 0;
+}
+
+.botao svg {
+	stroke: #E60000;
+	transition: all 0.3s ease;
+}
+
+.botao:hover {
+	background: #E60000;
+	box-shadow: 0 0 20px rgba(230, 0, 0, 0.4);
+	transform: translateY(-2px);
+}
+
+.botao:hover p {
+	color: #000000;
+}
+.botao:hover svg {
+	stroke: #000000;
+}
